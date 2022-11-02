@@ -240,6 +240,7 @@ let residuo20 = 0
 let cociente10 = 0
 let residuo10 = 0
 let cociente5 = 0
+
 function dineroAretirar() {
     if (flagCliente = true && dineroEnCaja.length != 0) {
         console.log("length: " + dineroEnCaja.length)
@@ -295,38 +296,38 @@ function clientes(montoAretirar) {
     if (montoAretirar <= totalDineroEnCaja) {
 
         if (montoAretirar >= 100000 && montoAretirar / 100000 <= cantTotalBillete100) {
-            cociente100 = montoAretirar / 100000
+            cociente100 = parseInt(montoAretirar / 100000)
             montoAretirar -= (100000 * cociente100)
             cantTotalBillete100 -= cociente100
         }
         if (montoAretirar >= 50000 && montoAretirar / 50000 <= cantTotalBillete50) {
-            cociente50 = montoAretirar / 50000
+            cociente50 = parseInt(montoAretirar / 50000)
             montoAretirar -= (50000 * cociente50)
             cantTotalBillete50 -= cociente50
         }
         if (montoAretirar >= 20000 && montoAretirar / 20000 <= cantTotalBillete20) {
-            cociente20 = montoAretirar / 20000
+            cociente20 = parseInt(montoAretirar / 20000)
             montoAretirar -= (20000 * cociente20)
             cantTotalBillete20 -= cociente20
         }
         if (montoAretirar >= 10000 && montoAretirar / 10000 <= cantTotalBillete10) {
-            cociente10 = montoAretirar / 10000
+            cociente10 = parseInt(montoAretirar / 10000)
             montoAretirar -= (10000 * cociente10)
             cantTotalBillete10 -= cociente10
         }
         if (montoAretirar >= 5000 && montoAretirar / 5000 <= cantTotalBillete5) {
-            cociente5 = montoAretirar / 5000
+            cociente5 = parseInt(montoAretirar / 5000)
             montoAretirar -= (5000 * cociente5)
             cantTotalBillete5 -= cociente5
         } else if (montoAretirar >= 5000 && montoAretirar / 5000 >= cantTotalBillete5) {
             swal("Error", "El cajero no tiene el monto solicitado", "error");
         }
     
-        console.log("Billetes de 100 mil necesita: " + parseInt(cociente100))
-        console.log("Billetes de 50 mil necesita: " + parseInt(cociente50))
-        console.log("Billetes de 20 mil necesita: " + parseInt(cociente20))
-        console.log("Billetes de 10 mil necesita: " + parseInt(cociente10))
-        console.log("Billetes de 5 mil necesita: " + parseInt(cociente5))
+        console.log("Billetes de 100 mil necesita: " + cociente100)
+        console.log("Billetes de 50 mil necesita: " + cociente50)
+        console.log("Billetes de 20 mil necesita: " + cociente20)
+        console.log("Billetes de 10 mil necesita: " + cociente10)
+        console.log("Billetes de 5 mil necesita: " + cociente5)
         
         alert("Transaccion Exitosa");
         let hacerMasRetiros = prompt("¿Vas a hacer otro retiro? responde Si o No").trim().toLowerCase()
